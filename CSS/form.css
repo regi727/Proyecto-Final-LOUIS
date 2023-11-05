@@ -1,0 +1,97 @@
+/** Formulario de contacto*/
+h1 {
+    display: flex;
+    justify-content: center;
+    color: blue;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.formulaioContacto {
+    display: flex;
+    justify-content: center;
+
+}
+
+form {
+    background-color: white;
+    width: 350px;
+    height: 380px;
+   
+    
+    border-radius: 5px;
+    box-shadow: rgb(0, 0, 8);
+    color: grey
+}
+
+.btn button {
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+input,textarea {
+    width: 100%;
+    padding: 8px;
+    outline: none;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+.contact {
+    margin: auto;
+}
+
+textarea {
+    outline: none;
+    font-size: 18px;
+}
+/**Fin Formulario de contacto*/
+
+/**Fin Formulario de compra*/
+.infoTarjeta-tiulo {
+    display: flex;
+    justify-content: center;
+    color: green;
+    margin-top: 40px;
+}
+
+form {
+    width: 390px;
+    height: auto;
+}
+
+.info-tarjeta,
+input{
+    width: 100%;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.info button {
+    background-color: rgb(2, 53, 2);
+    color: white;
+    border: none;
+    padding: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.info button:hover {
+    background-color: green;
+}
+#mensaje {
+    color: red;
+    font-size: 20px;
+    margin: auto;
+}
+
+.contenedor-compra{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+/**Fin Formulario de compra*/

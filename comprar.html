@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./CSS/form.css ">
+    <title></title>
+</head>
+
+<body>
+    <div class="infoTarjeta-tiulo">
+        <h3>Tu informaciónde pago está seguro </h3>
+    </div>
+
+    <div class="contenedor-compra">
+
+
+        <form id="form-compra" action="">
+            <div class="info-tarjeta">
+                <div class="info">
+                    <input type="text" id="num-tarjeta" name="num-tarjeta" placeholder=" Número de la tarjeta">
+                    <input type="text" id="nom-titular" name="nom-titular"
+                        placeholder="Nombre del titular de la tarjeta">
+                </div>
+                <div class="info">
+                    <input type="date" id="date-tarjeta" name="date-tarjeta" placeholder="fecha de vencimiento">
+                    <input type="text" id="cvv-tarjeta" name="cvv-tarjeta" placeholder="CVV">
+                </div>
+                <div class="info">
+                    <button type="submit" id="btn-pagar">Pagar</button>
+                </div>
+
+                <p id="mensaje" style="margin-top: 30px;"></p>
+            </div>
+        </form>
+
+    </div>
+
+
+
+    <script>
+        // codigo form compra **********************************
+        document.getElementById("form-compra").addEventListener("submit", function (e) {
+            e.preventDefault();
+            let numTarjeta = document.getElementById("num-tarjeta").value;
+            let nomTitular = document.getElementById("nom-titular").value;
+            let date = document.getElementById("date-tarjeta").value;
+            let cvvTarjeta = document.getElementById("cvv-tarjeta").value;
+          
+
+            if (numTarjeta === "" || nomTitular === "" || date === "" || cvvTarjeta === "") {
+                document.getElementById("mensaje").textContent = "Por favor,rellene todo los campos.";
+
+            } else {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Compra exitosa',
+                    text: 'Gracias por su compra'
+                });
+
+                window.location.href = "index.html";
+
+                numTarjeta = document.getElementById("num-tarjeta").value = "";
+                nomTitular = document.getElementById("nom-titular").value = "";
+                date = document.getElementById("date-tarjeta").value = "";
+                cvvTarjeta = document.getElementById("cvv-tarjeta").value = "";
+            }
+        });
+
+       
+        // Fin codigo form compra **********************************
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

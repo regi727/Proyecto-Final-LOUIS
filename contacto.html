@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./CSS/form.css">
+    <title></title>
+</head>
+
+<body>
+    <div class="formulaioContacto">
+        <form id="contact-form">
+            <div class="contact">
+                <h1>Formulario de contacto</h1>
+                <div class="form-contact">
+                    <label for="input-name">Nombre</label>
+                    <input type="text" placeholder="Tu nombre..." id="input-name" name="input-name"><br>
+                    <label for="input-email">Email</label>
+                    <input type="email" placeholder="Tu email..." id="input-email" name="input-email">
+                </div>
+                <textarea name="text" id="text-message" name="text-message" cols="35" rows="8"
+                    placeholder="Déjanos tu mensaje aquí..."></textarea>
+    
+                <div class="btn">
+                    <button type="submit" id="enviar">Enviar</button>
+                </div>
+                <span id="mensaje"></span>
+            </div>
+        </form>
+    </div>
+    
+
+    <script>
+
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            let name = document.getElementById("input-name").value;
+            let email = document.getElementById("input-email").value;
+            let mensaje = document.getElementById("text-message").value;
+
+            let mensajes = {
+                name: name,
+                email: email,
+                mensaje: mensaje,
+            };
+            let mensajesEnv = JSON.parse(localStorage.getItem("mensajesEnv ")) || [];
+
+            if (name === "" || email === "" || mensaje === "") {
+
+                document.getElementById("mensaje").textContent = "Por favor, rellene todos los campos.";
+            } else {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Mensaje enviado con exito',
+                    text: 'Gracias por contactarnos',
+                    timer: 25000
+                });
+                mensajesEnv.push(mensajes);
+                localStorage.setItem("mensajesEnv ", JSON.stringify(mensajesEnv));
+
+                window.location.href = "index.html";
+
+                name = document.getElementById("input-name").value = "";
+                email = document.getElementById("input-email").value = "";
+                mensaje = document.getElementById("text-message").value = "";
+            }
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

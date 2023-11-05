@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./CSS/styles.css">
+
+  <title>Document</title>
+</head>
+
+<body>
+  
+  <div class="titulo">
+    <h3 class="titulo-registro">Regístrate</h3>
+    <form id="userForm">
+      <div class="registro">
+        <div class="form-input">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre">
+        </div>
+
+        <div class="form-input">
+          <label for="email">Email</label>
+          <input type="text" id="email">
+
+        </div>
+
+        <div class="form-input">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password">
+        </div>
+
+        <div class="form-input">
+          <label for="repitPass">Confirmar Contraseña</label>
+          <input type="password" id="repitPass">
+
+        </div>
+
+        <button type="submit" class="btn-registrar">Registrar</button>
+        <p>¿Ya tienes una cuenta?</p>
+        <a href="login.html">Iniciar sesión.</a>
+      </div>
+      <span id="mensaje" style="font-size: 18px;"></span>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="registrar.js"></script>
+</body>
+
+</html>
